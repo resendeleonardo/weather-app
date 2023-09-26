@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
 
-    <!-- Add the Favicon Link -->
-    <link rel="icon" type="image/png" href="#">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
 
     <!-- Inter font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,12 +27,12 @@
 <body>
 
     <!-- Search Box -->
-    <header>
+    <header class="header">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <div class="input-group mb-0">
-                        <input type="text" class="form-control" placeholder="Ver cidade..." id="search-input" aria-label="Search" aria-describedby="search-button">
+                        <input type="text" class="form-control" placeholder="Buscar cidade..." id="search-input" aria-label="Search" aria-describedby="search-button">
                         <button class="btn btn-secondary" type="button" id="search-button"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
@@ -41,33 +41,107 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container-fluid">
-        <div class="main-content d-flex align-items-center justify-content-center">
-
-            <!-- Weather App Card -->
-            <div class="card" id="weather-card">
-                <div class="container" id="weather-content">
-                    <div class="row mb-4">
-                        <div class="col">
-                            <div class="d-flex justify-content-between" id="temperature">
-                                <p class="mb-0">26º</b></p>
-                                <i class="fa-solid fa-cloud-showers-heavy"></i>
-                            </div>
-                            <h4 class="mb-4">Chuva</h4>
-                            <div>
-                                <p class="mb-0">Rio de Janeiro, Brasil</p>
-                                <p>26º / 19º Sensação térmica de 25º</p>
+    <main class="main">
+        <div class="container-fluid">
+            <div class="main-content d-flex align-items-center justify-content-center">
+    
+                <!-- Weather App Card -->
+                <div class="card" id="weather-card">
+                    <div class="container" id="weather-content">
+                        <div class="row mb-4">
+                            <div class="col">
+                                <div class="d-flex justify-content-between" id="temperature-div">
+                                    <p class="mb-0" id="temp">26º</b></p>
+                                    <span id="weather-icon"></span>
+                                </div>
+                                <h4 class="mb-4" id="weather-description">Chuva</h4>
+                                <div>
+                                    <p class="mb-0" id="location">Brasília, Brasil</p>
+                                    <div class="row">
+                                        <p>
+                                            <span id="temp-max">26º</span> / <span id="temp-min">19º</span> Sensação térmica de <span id="feels-like">25º</span>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <p class="mt-5" id="source-website">fonte: <a href="#">openweathermap.org</a></p>
-                    </div>
-                </div>                    
+                        <!-- Weekly Weather Card -->
+                        <div class="card" id="week-card">
+                            <div class="container" id="week-content">
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">Chuva</th>
+                                            <th scope="col">Tempo</th>
+                                            <th scope="col">Máx / Mín</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">Hoje</th>
+                                        <td><i class="fa-solid fa-droplet"></i> 32%</td>
+                                        <td><i class="fa-solid fa-cloud-sun-rain"></i> <i class="fa-solid fa-cloud-moon-rain"></i></td>
+                                        <td>26º / 19º</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Amanhã</th>
+                                        <td><i class="fa-solid fa-droplet"></i> 20%</td>
+                                        <td><i class="fa-solid fa-cloud-sun-rain"></i> <i class="fa-solid fa-cloud-moon-rain"></i></td>
+                                        <td>28º / 21º</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Sexta</th>
+                                        <td><i class="fa-solid fa-droplet"></i> 4%</td>
+                                        <td><i class="fa-solid fa-sun"></i> <i class="fa-solid fa-moon"></i></td>
+                                        <td>30º / 22º</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Sábado</th>
+                                        <td><i class="fa-solid fa-droplet"></i> 2%</td>
+                                        <td><i class="fa-solid fa-sun"></i> <i class="fa-solid fa-moon"></i></td>
+                                        <td>28º / 20º</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
+                        </div>
+                        <!-- Alerts Card -->
+                        <div class="card mt-4" id="alert-card">
+                            <div class="card-body">
+                                <p class="d-flex justify-content-center mb-0">Sem previsão de chuva para hoje.</p>
+                            </div>
+                        </div>
+                        <!-- General Info Card -->
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <div class="card" id="humidity-card">
+                                    <div class="container">
+                                        <i class="fa-solid fa-water d-flex justify-content-center mt-2 mb-2"></i>
+                                        <p class="d-flex justify-content-center mb-0">Umidade</p>
+                                        <p class="d-flex justify-content-center" id="humidity">0%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-4">
+                                <div class="card" id="wind-speed-card">
+                                    <div class="container">
+                                        <i class="fa-solid fa-wind d-flex justify-content-center mt-2 mb-2"></i>
+                                        <p class="d-flex justify-content-center mb-0">Ventos</p>
+                                        <p class="d-flex justify-content-center" id="wind-speed">0 km/h</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="mt-5" id="source-website">fonte: <a href="#">openweathermap.org</a></p>
+                        </div>
+                    </div>                    
+                </div>
+                
             </div>
-            
         </div>
-    </div>
+    </main>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Link to Bootstrap JS -->
