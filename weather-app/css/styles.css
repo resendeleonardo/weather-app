@@ -1,73 +1,113 @@
 /* styles.css */
-        
+
 /* Body */
 body {
-    height: 100vh;
-    background-color: #E5E5E5;
+    /* height: 100vh; */
+
+    /* Clear Skyes [Day] - DEFAULT */
+    background: linear-gradient(135deg, #6285f3, #9db8e8, #809fff);
+    /* Clear Skyes [Night] */
+    /* background: linear-gradient(135deg, #807da3, #544c80, #303870); */
+    /* Rainy Skyes [Day & Night] */
+    /* background: linear-gradient(315deg, #636e84, #6d7c9a, #87a1ad); */
+
     font-family: 'Inter', sans-serif;
 }
-.navbar {
-    background: #E5E5E5;
-}
-
 
 /* Text Styles */
 h1, h2, h3, h4, h5, p, th, td {
-    color: #575656;
+    /* color: #575656; */
+    color: #fff;
 }
 #source-website {
+    color: #212529;
     font-size: 80%;
 }
 #source-website a {
-    color: black;
+    color: #212529;
 }
 
+/* Header */
+header {
+    padding: 30px 10px 20px 10px;
+}
+.btn-secondary {
+    --bs-btn-bg: #474a4d;
+    --bs-btn-border-color: #474a4d;
+    --bs-btn-hover-bg: #282626;
+    --bs-btn-hover-border-color: #282626;
+}
 
-/* Search Box Styles */
+/* Custom CSS - remove hover effect and change border color */
 .form-control:focus {
+    /* border-color: #007bff; */
     border-color: #575656;
     box-shadow: none;
 }
 #search-input {
-    border-radius: 10px;
+    border-radius: 20px;
     margin-right: 10px;
     color: #575656;
 }
 #search-button {
+    border-radius: 20px;
+}
+
+/* Week Card */
+#week-card {
     border-radius: 10px;
+    border-color: rgb(219, 217, 217);
+    background-color: rgb(219, 217, 217);
 }
-
-
-/* Header */
-header {
-    padding-top: 30px;
-    padding-bottom: 20px;
+#week-content {
+    padding: 10px;
 }
-
 
 /* Weather Card / Content  */
 #weather-card {
+    /* padding-top: 20px; */
+    /* margin-bottom: 40px; */
+    margin-bottom: 30px;
     border-radius: 10px;
     width: 42%;
-    background-color: #F8F7F7;
-    border-color: #F8F7F7;
+    background-color: transparent;
+    border-color: transparent;
 }
 #weather-content {
     padding: 40px;
 }
-#temperature p {
+#temperature-div p {
     font-size: 60px;
 }
-#temperature i {
+#temperature-div i {
     font-size: 60px; 
     margin-top: 20px;
     margin-right: 10px;
     color: gray;
 }
-#uv, #umidade {
-    background-color: rgb(219, 217, 217);
-    border-color: rgb(219, 217, 217);
+#humidity-card, #wind-speed-card, #alert-card, #week-card {
+    /* Clear Skyes [Day] */
+    /* background-color: #7390eb; */
+    border-color: transparent;
+    background-color: #577cee;
+    /* border-color: #577cee; */
+
+    /* Clear Skyes [Night] */
+    /* background-color: #665b99; */
+
+    /* Rainy Skyes [D&N] */
+    /* background-color: #6e7999; */
+
+    /* padding: 10px; */
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    border-radius: 20px;
+}
+#humidity-card, #wind-speed-card {
     padding: 10px;
+}
+#humidity-card i, #wind-speed-card i {
+    font-size: 35px;
+    color: #fff;
 }
 
 
@@ -75,6 +115,9 @@ header {
 @media (min-width: 768px) {
             
    /* Content */
+   #weather-card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+   }
 
 }
 
@@ -87,7 +130,8 @@ header {
 
     /* Weather Card / Content  */
     #weather-card {
-        border-radius: 10px;
+        /* margin-top: 20px; */
+        /* border-radius: 10px; */
         width: 100%;
         background-color: transparent;
         border-color: transparent;
