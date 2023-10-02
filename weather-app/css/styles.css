@@ -3,6 +3,7 @@
 /* Body */
 body {
     /* height: 100vh; */
+    font-family: 'Inter', sans-serif;
 
     /* Clear Skyes [Day] - DEFAULT */
     background: linear-gradient(135deg, #6285f3, #9db8e8, #809fff);
@@ -11,25 +12,36 @@ body {
     /* Rainy Skyes [Day & Night] */
     /* background: linear-gradient(315deg, #636e84, #6d7c9a, #87a1ad); */
 
-    font-family: 'Inter', sans-serif;
 }
 
 /* Text Styles */
 h1, h2, h3, h4, h5, p, th, td {
-    /* color: #575656; */
     color: #fff;
 }
 #source-website {
-    color: #212529;
+    font-weight: bold;
     font-size: 80%;
 }
 #source-website a {
-    color: #212529;
+    color: #fff;
 }
 
 /* Header */
 header {
     padding: 30px 10px 20px 10px;
+}
+.menu-button {
+    color: #fff;
+    background: transparent;
+    border: none;
+    --bs-btn-hover-bg: none;
+    --bs-btn-hover-border-color: none;
+    --bs-btn-active-bg: none;
+}
+.menu-button:focus-visible {
+    border-color: transparent;
+    outline: none;
+    box-shadow: none;
 }
 .btn-secondary {
     --bs-btn-bg: #474a4d;
@@ -37,39 +49,51 @@ header {
     --bs-btn-hover-bg: #282626;
     --bs-btn-hover-border-color: #282626;
 }
+.offcanvas {
+    background-color: rgb(40 40 40);
+}
+li a {
+    color: #fff;
+}
 
-/* Custom CSS - remove hover effect and change border color */
+.search-box {
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+/* Remove hover effect and change border color */
 .form-control:focus {
-    /* border-color: #007bff; */
     border-color: #575656;
     box-shadow: none;
 }
 #search-input {
+    border: none;
     border-radius: 20px;
-    margin-right: 10px;
-    color: #575656;
+    padding-right: 40px;
+    color: #fff;
+    background: transparent;
+}
+#search-input::placeholder {
+    color: #fff;
 }
 #search-button {
     border-radius: 20px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    opacity: 1;
 }
-
-/* Week Card */
-#week-card {
-    border-radius: 10px;
-    border-color: rgb(219, 217, 217);
-    background-color: rgb(219, 217, 217);
-}
-#week-content {
-    padding: 10px;
+#clear-input {
+    border-radius: 20px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    display: none;
 }
 
 /* Weather Card / Content  */
 #weather-card {
-    /* padding-top: 20px; */
-    /* margin-bottom: 40px; */
     margin-bottom: 30px;
     border-radius: 10px;
-    width: 42%;
     background-color: transparent;
     border-color: transparent;
 }
@@ -85,9 +109,18 @@ header {
     margin-right: 10px;
     color: gray;
 }
+/* Week Card */
+#week-card {
+    border-radius: 10px;
+    border-color: rgb(219, 217, 217);
+    background-color: rgb(219, 217, 217);
+}
+#week-content {
+    padding: 10px;
+}
+/* Humidity, Wind Speed, Alerts ... */
 #humidity-card, #wind-speed-card, #alert-card, #week-card {
-    /* Clear Skyes [Day] */
-    /* background-color: #7390eb; */
+    /* Clear Skyes [Day] - DEFAULT */
     border-color: transparent;
     background-color: #577cee;
     /* border-color: #577cee; */
@@ -98,7 +131,6 @@ header {
     /* Rainy Skyes [D&N] */
     /* background-color: #6e7999; */
 
-    /* padding: 10px; */
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     border-radius: 20px;
 }
@@ -114,7 +146,7 @@ header {
 /* Computer Screens */
 @media (min-width: 768px) {
             
-   /* Content */
+   /* Weather Card / Content */
    #weather-card {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
    }
@@ -130,8 +162,6 @@ header {
 
     /* Weather Card / Content  */
     #weather-card {
-        /* margin-top: 20px; */
-        /* border-radius: 10px; */
         width: 100%;
         background-color: transparent;
         border-color: transparent;

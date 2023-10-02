@@ -26,18 +26,38 @@
 </head>
 <body>
 
-    <!-- Search Box -->
+    <!-- Offcanvas Menu -->
     <header class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="input-group mb-0">
-                        <input type="text" class="form-control" placeholder="Buscar cidade..." id="search-input" aria-label="Search" aria-describedby="search-button">
-                        <button class="btn btn-secondary" type="button" id="search-button"><i class="fas fa-search"></i></button>
+        <button class="btn btn-primary menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path d="M1.5 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM1.5 7.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM1.5 12.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+        </button>
+        
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasMenuLabel"><i class="fas fa-cloud-sun-rain"></i> WeatherApp</h5>
+                <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="row">
+                    <div class="col-md">
+                        <div class="input-group mb-0 search-box">
+                            <input type="text" class="form-control" placeholder="Buscar cidade..." id="search-input" aria-label="Search" aria-describedby="search-button" maxlength="25">
+                            <button class="btn btn-secondary" type="button" id="search-button" data-bs-dismiss="offcanvas" disabled><i class="fas fa-search"></i></button>
+                            <button class="btn btn-secondary" id="clear-input" type="button"><i class="fas fa-times"></i></button>
+                        </div>
                     </div>
                 </div>
+                <!-- Added locations -->
+                
             </div>
-        </div>
+            <div class="offcanvas-footer">
+                <div class="container">
+                    <p class="mt-5" id="source-website">Fonte: <a href="https://openweathermap.org/">OpenWeather</a></p>
+                </div>
+            </div>
+        </div>                
     </header>
 
     <!-- Main Content -->
@@ -65,7 +85,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Weekly Weather Card -->
+                        <!-- Weekly Weather Card [NO API] -->
                         <div class="card" id="week-card">
                             <div class="container" id="week-content">
                                 <table class="table table-borderless">
@@ -80,33 +100,33 @@
                                     <tbody>
                                       <tr>
                                         <th scope="row">Hoje</th>
-                                        <td><i class="fa-solid fa-droplet"></i> 32%</td>
+                                        <td><i class="fa-solid fa-droplet"></i> 0%</td>
                                         <td><i class="fa-solid fa-cloud-sun-rain"></i> <i class="fa-solid fa-cloud-moon-rain"></i></td>
-                                        <td>26º / 19º</td>
+                                        <td>20º / 20º</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Amanhã</th>
-                                        <td><i class="fa-solid fa-droplet"></i> 20%</td>
+                                        <td><i class="fa-solid fa-droplet"></i> 0%</td>
                                         <td><i class="fa-solid fa-cloud-sun-rain"></i> <i class="fa-solid fa-cloud-moon-rain"></i></td>
-                                        <td>28º / 21º</td>
+                                        <td>20º / 20º</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Sexta</th>
-                                        <td><i class="fa-solid fa-droplet"></i> 4%</td>
+                                        <td><i class="fa-solid fa-droplet"></i> 0%</td>
                                         <td><i class="fa-solid fa-sun"></i> <i class="fa-solid fa-moon"></i></td>
-                                        <td>30º / 22º</td>
+                                        <td>20º / 20º</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Sábado</th>
-                                        <td><i class="fa-solid fa-droplet"></i> 2%</td>
+                                        <td><i class="fa-solid fa-droplet"></i> 0%</td>
                                         <td><i class="fa-solid fa-sun"></i> <i class="fa-solid fa-moon"></i></td>
-                                        <td>28º / 20º</td>
+                                        <td>20º / 20º</td>
                                       </tr>
                                     </tbody>
                                   </table>
                             </div>
                         </div>
-                        <!-- Alerts Card -->
+                        <!-- Alerts Card [NO API] -->
                         <div class="card mt-4" id="alert-card">
                             <div class="card-body">
                                 <p class="d-flex justify-content-center mb-0">Sem previsão de chuva para hoje.</p>
@@ -132,9 +152,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <p class="mt-5" id="source-website">fonte: <a href="#">openweathermap.org</a></p>
                         </div>
                     </div>                    
                 </div>
