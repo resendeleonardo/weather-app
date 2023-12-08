@@ -1,17 +1,17 @@
-﻿### PT-BR
+# Weather App
 
-# App de Previsão do Tempo *(Weather App)*
+A simple web application for a responsive Weather App built with HTML, CSS, and JavaScript.
 
-## Objetivo
-- Desenvolver habilidades de desenvolvimento web frontend e a integração de APIs.
-- Esta aplicação foi criada com fins de estudo.
+## Introduction
 
-## Características
+This project is a basic, yet fully responsive and interactive Weather App utilizing JavaScript and API integration. The goal is to fetch weather data from an API and render this data into our user interface.
 
-- Ver as condições meteorológicas atuais para qualquer local do mundo.
-- Dados meteorológicos: temperatura, umidade, velocidade do vento e muito mais.
-- Interface de usuário limpa e intuitiva.
-- Design responsivo para uso em desktops e dispositivos móveis.
+## Features
+
+- View current weather conditions for any location worldwide.
+- Weather data: temperature, humidity, wind speed, and more.
+- Clean and intuitive user interface.
+- Responsive design for use on desktops and mobile devices.
 
 ## Screenshots
 
@@ -20,33 +20,34 @@
   <img src="weather-app/screenshots/weather-app-index.png" alt="Screenshot 2" width="292.5" height="633">
 </div>
 
-## Tecnologias usadas
+## Technologies Used
 
 - HTML5
 - CSS3
 - Bootstrap
 - JavaScript
-- [OpenWeather API](https://openweathermap.org/api) - Utilizada para buscar os dados meteorológicos.
+- [OpenWeather API](https://openweathermap.org/api) - Used to retrieve weather data.
 
-## Uso
-- Digite uma cidade de qualquer local do mundo na barra de pesquisa.
-- A pesquisa é iniciada ao apertar o botão 'enter'.
-- As informações do tempo para a localidade serão mostradas*.
+## Usage
 
-*Os cards que indicam a semana e alertas ainda não contam com updates da API.
+- Enter the name of any city worldwide in the search bar.
+- Press the 'Enter' key to initiate the search.
+- Weather information for the specified location will be displayed*.
 
-## Instalação
+*Note: The cards indicating the week and alerts do not yet receive updates from the API.
 
-1. Clone o repositório abaixo caso queira usar este projeto:
+## Installation
+
+1. Clone the repository if you want to use this project:
 
    ```bash
    git clone https://github.com/resendeleonardo/weather-app.git
 
-2. Vá para a pasta do projeto.
+2. Navigate to the project folder.
    ```bash
    cd weather-app
 
-3. Abra `index.html` no seu navegador ou `localhost:8080/weather-app/` caso crie um servidor `http` local, neste último caso você poderá criar o servidor com o código abaixo:
+3. Open `index.html` in your browser or `localhost:8080/weather-app/` if you create a local `http` server. In the latter case, you can create the server using the code below:
    ```bash
    http-server -p 0
 
