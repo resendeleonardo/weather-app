@@ -10,7 +10,7 @@ async function getWeatherData(cityName) {
         const response = await fetch(apiUrl + `${cityName}&units=metric&appid=${apiKey}&lang=pt_br`);
         const data = await response.json();
 
-        console.log(data);
+        // console.log(data);
 
         // Update temperature
         document.getElementById('temp').textContent = `${Math.round(data.main.temp)}º`;
@@ -19,15 +19,13 @@ async function getWeatherData(cityName) {
 
         // Update weather icon and bg on weather condition
         if (weatherCondition === 'Clear' && data.weather[0].icon === '01d') {
-            console.log(`Condição climática é: ${weatherCondition}`)
             document.getElementById('weather-icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather-icon" id="weather-icon" style="height: 90px;"></img>`;
             document.body.style.background = 'linear-gradient(135deg, #6285f3, #9db8e8, #809fff)';
-            document.getElementById('week-card').style.backgroundColor = '#577cee';
+            document.querySelector('.week-card').style.backgroundColor = '#577cee';
             document.getElementById('alert-card').style.backgroundColor = '#577cee';
             document.getElementById('humidity-card').style.backgroundColor = '#577cee';
             document.getElementById('wind-speed-card').style.backgroundColor = '#577cee';
         } else if (['Thunderstom', 'Drizzle', 'Rain', 'Clouds'].includes(weatherCondition)) {
-            console.log(`Condição climática é: ${weatherCondition}`);
             document.getElementById('weather-icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather-icon" id="weather-icon" style="height: 90px;"></img>`;
             document.body.style.background = 'linear-gradient(315deg, #636e84, #6d7c9a, #87a1ad)';
             document.getElementById('week-card').style.backgroundColor = '#6e7999';
@@ -70,31 +68,31 @@ async function getWeatherData(cityName) {
 // Call the function to update weather data on html
 // getWeatherData();
 
-document.addEventListener('DOMContentLoaded', () => {
-    const cityName = document.getElementById('search-input');
-    const clearBtn = document.getElementById('clear-input');
-    const searchBtn = document.getElementById('search-button'); // Can add search on button click
-    getWeatherData('Brasília'); // Default City
-    cityName.addEventListener('input', () => {
-        if (cityName.value.trim() !== '') {
-            clearBtn.style.display = 'block';
-            searchBtn.style.display = 'none';
-        } else {
-            clearBtn.style.display = 'none';
-            searchBtn.style.display = 'block';
-        }
-    });
-    clearBtn.addEventListener('click', () => {
-        cityName.value = '';
-        clearBtn.style.display = 'none';
-        searchBtn.style.display = 'block';
-    });
-    cityName.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' && cityName.value != '') {
-        //   console.log('Enter key was pressed');
-        //   console.log(`City typed is: ${cityName.value}`);
-          getWeatherData(cityName.value);
-          document.querySelector('[data-bs-dismiss="offcanvas"]').click();
-        }
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  const cityName = document.getElementById("search-input");
+  const clearBtn = document.getElementById("clear-input");
+  const searchBtn = document.getElementById("search-button"); // Can add search on button click
+  getWeatherData("Brasília"); // Default City
+  cityName.addEventListener("input", () => {
+    if (cityName.value.trim() !== "") {
+      clearBtn.style.display = "block";
+      searchBtn.style.display = "none";
+    } else {
+      clearBtn.style.display = "none";
+      searchBtn.style.display = "block";
+    }
+  });
+  clearBtn.addEventListener("click", () => {
+    cityName.value = "";
+    clearBtn.style.display = "none";
+    searchBtn.style.display = "block";
+  });
+  cityName.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && cityName.value !== "") {
+      //   console.log('Enter key was pressed');
+      //   console.log(`City typed is: ${cityName.value}`);
+      getWeatherData(cityName.value);
+      document.querySelector('[data-bs-dismiss="offcanvas"]').click();
+    }
+  });
 });

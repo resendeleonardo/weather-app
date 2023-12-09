@@ -1,173 +1,187 @@
-/* styles.css */
+/* ./css/styles.css */
 
-/* Body */
+/* Default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #26877f;
+  --text-color-white: #fff;
+  font-size: 62.5%;
+}
+
 body {
-    /* height: 100vh; */
-    font-family: 'Inter', sans-serif;
+  /* height: 100vh; */
+  font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
+  /* margin: 3rem 5%; */
 
-    /* Clear Skyes [Day] - DEFAULT */
-    background: linear-gradient(135deg, #6285f3, #9db8e8, #809fff);
-    /* Clear Skyes [Night] */
-    /* background: linear-gradient(135deg, #807da3, #544c80, #303870); */
-    /* Rainy Skyes [Day & Night] */
-    /* background: linear-gradient(315deg, #636e84, #6d7c9a, #87a1ad); */
-
+  /* Clear Skyes [Day] - DEFAULT */
+  background: linear-gradient(135deg, #6285f3, #9db8e8, #809fff);
 }
 
 /* Text Styles */
-h1, h2, h3, h4, h5, p, th, td {
-    color: #fff;
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+th,
+td {
+  color: var(--text-color-white);
 }
-#source-website {
-    font-weight: bold;
-    font-size: 80%;
-}
-#source-website a {
-    color: #fff;
+.source-api {
+  font-weight: bold;
+  color: var(--text-color-white);
 }
 
 /* Header */
 header {
-    padding: 30px 10px 20px 10px;
+  padding: 3em 1em 1em 1em;
 }
 .menu-button {
-    color: #fff;
-    background: transparent;
-    border: none;
-    --bs-btn-hover-bg: none;
-    --bs-btn-hover-border-color: none;
-    --bs-btn-active-bg: none;
+  color: #fff;
+  background: transparent;
+  border: none;
+  --bs-btn-hover-bg: none;
+  --bs-btn-hover-border-color: none;
+  --bs-btn-active-bg: none;
 }
 .menu-button:focus-visible {
-    border-color: transparent;
-    outline: none;
-    box-shadow: none;
+  border-color: transparent;
+  outline: none;
+  box-shadow: none;
 }
 .btn-secondary {
-    --bs-btn-bg: #474a4d;
-    --bs-btn-border-color: #474a4d;
-    --bs-btn-hover-bg: #282626;
-    --bs-btn-hover-border-color: #282626;
+  --bs-btn-bg: #474a4d;
+  --bs-btn-border-color: #474a4d;
+  --bs-btn-hover-bg: #282626;
+  --bs-btn-hover-border-color: #282626;
 }
 .offcanvas {
-    background-color: rgb(40 40 40);
+  background-color: rgb(40 40 40);
 }
 li a {
-    color: #fff;
+  color: #fff;
 }
 
 .search-box {
-    border: 1px solid #fff;
-    border-radius: 20px;
+  border: 1px solid #fff;
+  border-radius: 20px;
 }
 /* Remove hover effect and change border color */
 .form-control:focus {
-    border-color: #575656;
-    box-shadow: none;
+  border-color: #575656;
+  box-shadow: none;
 }
 #search-input {
-    border: none;
-    border-radius: 20px;
-    padding-right: 40px;
-    color: #fff;
-    background: transparent;
+  border: none;
+  border-radius: 20px;
+  padding-right: 40px;
+  color: #fff;
+  background: transparent;
 }
 #search-input::placeholder {
-    color: #fff;
+  color: #fff;
 }
 #search-button {
-    border-radius: 20px;
-    color: #fff;
-    background-color: transparent;
-    border: none;
-    opacity: 1;
+  border-radius: 20px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  opacity: 1;
 }
 #clear-input {
-    border-radius: 20px;
-    color: #fff;
-    background-color: transparent;
-    border: none;
-    display: none;
+  border-radius: 20px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  display: none;
 }
 
 /* Weather Card / Content  */
-#weather-card {
-    margin-bottom: 30px;
-    border-radius: 10px;
-    background-color: transparent;
-    border-color: transparent;
+.weather-card {
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background-color: transparent;
+  border-color: transparent;
 }
-#weather-content {
-    padding: 40px;
+.weather-content {
+  padding: 40px;
 }
 #temperature-div p {
-    font-size: 60px;
+  font-size: 60px;
 }
 #temperature-div i {
-    font-size: 60px; 
-    margin-top: 20px;
-    margin-right: 10px;
-    color: gray;
+  font-size: 60px;
+  margin-top: 20px;
+  margin-right: 10px;
+  color: gray;
 }
 /* Week Card */
 #week-card {
-    border-radius: 10px;
-    border-color: rgb(219, 217, 217);
-    background-color: rgb(219, 217, 217);
+  border-radius: 10px;
+  border-color: rgb(219, 217, 217);
+  background-color: rgb(219, 217, 217);
 }
 #week-content {
-    padding: 10px;
+  padding: 10px;
 }
 /* Humidity, Wind Speed, Alerts ... */
-#humidity-card, #wind-speed-card, #alert-card, #week-card {
-    /* Clear Skyes [Day] - DEFAULT */
-    border-color: transparent;
-    background-color: #577cee;
-    /* border-color: #577cee; */
+#humidity-card,
+#wind-speed-card,
+#alert-card,
+#week-card {
+  /* Clear Skyes [Day] - DEFAULT */
+  border-color: transparent;
+  background-color: #577cee;
+  /* border-color: #577cee; */
 
-    /* Clear Skyes [Night] */
-    /* background-color: #665b99; */
+  /* Clear Skyes [Night] */
+  /* background-color: #665b99; */
 
-    /* Rainy Skyes [D&N] */
-    /* background-color: #6e7999; */
+  /* Rainy Skyes [D&N] */
+  /* background-color: #6e7999; */
 
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
-    border-radius: 20px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  border-radius: 20px;
 }
-#humidity-card, #wind-speed-card {
-    padding: 10px;
+#humidity-card,
+#wind-speed-card {
+  padding: 10px;
 }
-#humidity-card i, #wind-speed-card i {
-    font-size: 35px;
-    color: #fff;
+#humidity-card i,
+#wind-speed-card i {
+  font-size: 35px;
+  color: #fff;
 }
-
 
 /* Computer Screens */
 @media (min-width: 768px) {
-            
-   /* Weather Card / Content */
-   #weather-card {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
-   }
-
+  /* Weather Card / Content */
+  .weather-card {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  }
 }
 
 /* Mobile Screens */
 @media (max-width: 767.98px) {
-    body {
-        transform: none !important;
-        transition: none !important;
-    }
+  body {
+    transform: none !important;
+    transition: none !important;
+  }
 
-    /* Weather Card / Content  */
-    #weather-card {
-        width: 100%;
-        background-color: transparent;
-        border-color: transparent;
-    }
-    #weather-content {
-        padding: 10px;
-    }
-
+  /* Weather Card / Content  */
+  .weather-card {
+    width: 100%;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  #weather-content {
+    padding: 10px;
+  }
 }
