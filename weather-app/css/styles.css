@@ -8,9 +8,8 @@
 }
 
 :root {
-  --main-color: #26877f;
-  --text-color-white: #fff;
   font-size: 62.5%;
+
 }
 
 body {
@@ -23,44 +22,16 @@ body {
   background: linear-gradient(135deg, #6285f3, #9db8e8, #809fff);
 }
 
-/* Text Styles */
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-th,
-td {
-  color: var(--text-color-white);
-}
-.source-api {
-  font-weight: bold;
-  color: var(--text-color-white);
-}
-
 /* Header */
-header {
-  padding: 3em 1em 1em 1em;
-}
-.menu-button {
+.btn-menu {
   color: #fff;
   background: transparent;
   border: none;
-  --bs-btn-hover-bg: none;
-  --bs-btn-hover-border-color: none;
-  --bs-btn-active-bg: none;
 }
-.menu-button:focus-visible {
+.btn-menu:focus-visible {
   border-color: transparent;
   outline: none;
   box-shadow: none;
-}
-.btn-secondary {
-  --bs-btn-bg: #474a4d;
-  --bs-btn-border-color: #474a4d;
-  --bs-btn-hover-bg: #282626;
-  --bs-btn-hover-border-color: #282626;
 }
 .offcanvas {
   background-color: rgb(40 40 40);
@@ -105,10 +76,9 @@ li a {
 
 /* Weather Card / Content  */
 .weather-card {
-  margin-bottom: 30px;
-  border-radius: 10px;
   background-color: transparent;
   border-color: transparent;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 .weather-content {
   padding: 40px;
@@ -123,19 +93,19 @@ li a {
   color: gray;
 }
 /* Week Card */
-#week-card {
+.week-card {
   border-radius: 10px;
   border-color: rgb(219, 217, 217);
   background-color: rgb(219, 217, 217);
 }
-#week-content {
+.week-content {
   padding: 10px;
 }
 /* Humidity, Wind Speed, Alerts ... */
 #humidity-card,
 #wind-speed-card,
 #alert-card,
-#week-card {
+.week-card {
   /* Clear Skyes [Day] - DEFAULT */
   border-color: transparent;
   background-color: #577cee;
@@ -147,8 +117,8 @@ li a {
   /* Rainy Skyes [D&N] */
   /* background-color: #6e7999; */
 
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
-  border-radius: 20px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  /* border-radius: 20px; */
 }
 #humidity-card,
 #wind-speed-card {
@@ -158,14 +128,6 @@ li a {
 #wind-speed-card i {
   font-size: 35px;
   color: #fff;
-}
-
-/* Computer Screens */
-@media (min-width: 768px) {
-  /* Weather Card / Content */
-  .weather-card {
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
-  }
 }
 
 /* Mobile Screens */
@@ -180,6 +142,7 @@ li a {
     width: 100%;
     background-color: transparent;
     border-color: transparent;
+    box-shadow: none;
   }
   #weather-content {
     padding: 10px;

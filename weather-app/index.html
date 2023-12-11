@@ -26,52 +26,54 @@
 
 </head>
 
-<body>
+<body class="min-vh-100">
 
-    <!-- Offcanvas Menu -->
     <header>
-        <button class="btn btn-primary menu-button" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasMenu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
-                viewBox="0 0 16 16">
-                <path
-                    d="M1.5 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM1.5 7.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM1.5 12.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
-            </svg>
-        </button>
+        <!-- Offcanvas Menu -->
+        <div class="pt-5 px-4">
+            <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M1.5 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM1.5 7.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM1.5 12.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </button>
 
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasMenuLabel"><i class="fas fa-cloud-sun-rain"></i> WeatherApp
-                </h5>
-                <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div class="row">
-                    <div class="col-md">
-                        <div class="input-group mb-0 search-box">
-                            <input type="text" class="form-control" placeholder="Buscar cidade..." id="search-input"
-                                aria-label="Search" aria-describedby="search-button" maxlength="25">
-                            <button class="btn btn-secondary" type="button" id="search-button"
-                                data-bs-dismiss="offcanvas" disabled><i class="fas fa-search"></i></button>
-                            <button class="btn btn-secondary" id="clear-input" type="button"><i
-                                    class="fas fa-times"></i></button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu"
+                aria-labelledby="offcanvasMenuLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-white" id="offcanvasMenuLabel"><i class="fas fa-cloud-sun-rain"></i> WeatherApp
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="input-group mb-0 search-box">
+                                <input type="text" class="form-control" placeholder="Buscar cidade..." id="search-input"
+                                    aria-label="Search" aria-describedby="search-button" maxlength="25">
+                                <button class="btn btn-secondary" type="button" id="search-button"
+                                    data-bs-dismiss="offcanvas" disabled><i class="fas fa-search"></i></button>
+                                <button class="btn btn-secondary" id="clear-input" type="button"><i
+                                        class="fas fa-times"></i></button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Added locations -->
+                    <!-- Added locations -->
 
-            </div>
-            <div class="offcanvas-footer">
-                <div class="container">
-                    <a href="https://openweathermap.org/" class="mt-5 source-api">OpenWeather</a>
+                </div>
+                <div class="offcanvas-footer">
+                    <div class="container mb-2">
+                        <a href="https://openweathermap.org/" class="text-white text-decoration-none">OpenWeather</a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="main">
+    <main class="main mb-sm-4">
         <div class="container-fluid">
             <div class="main-content d-flex align-items-center justify-content-center">
 
@@ -81,14 +83,14 @@
                         <div class="row mb-4">
                             <div class="col">
                                 <div class="d-flex justify-content-between" id="temperature-div">
-                                    <p class="mb-0" id="temp">26º</b></p>
+                                    <p class="mb-0 text-light" id="temp">26º</b></p>
                                     <span id="weather-icon"></span>
                                 </div>
-                                <h4 class="mb-4" id="weather-description">Chuva</h4>
+                                <h4 class="mb-4 text-light" id="weather-description">Chuva</h4>
                                 <div>
-                                    <p class="mb-0" id="location">Brasília, Brasil</p>
+                                    <p class="mb-0 text-light" id="location">Brasília, Brasil</p>
                                     <div class="row">
-                                        <p>
+                                        <p class="text-light">
                                             <span id="temp-max">26º</span> / <span id="temp-min">19º</span> Sensação
                                             térmica de <span id="feels-like">25º</span>
                                         </p>
@@ -97,11 +99,11 @@
                             </div>
                         </div>
                         <!-- Weekly Weather Card [NO API] -->
-                        <div class="card week-card" id="week-card">
-                            <div class="container" id="week-content">
+                        <div class="card week-card rounded-5" id="week-card">
+                            <div class="container week-content">
                                 <table class="table table-borderless">
                                     <thead>
-                                        <tr>
+                                        <tr class="text-light">
                                             <th scope="col"></th>
                                             <th scope="col">Chuva</th>
                                             <th scope="col">Tempo</th>
@@ -109,27 +111,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr class="text-light">
                                             <th scope="row">Hoje</th>
                                             <td><i class="fa-solid fa-droplet"></i> 0%</td>
                                             <td><i class="fa-solid fa-cloud-sun-rain"></i> <i
                                                     class="fa-solid fa-cloud-moon-rain"></i></td>
                                             <td>20º / 20º</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="text-light">
                                             <th scope="row">Amanhã</th>
                                             <td><i class="fa-solid fa-droplet"></i> 0%</td>
                                             <td><i class="fa-solid fa-cloud-sun-rain"></i> <i
                                                     class="fa-solid fa-cloud-moon-rain"></i></td>
                                             <td>20º / 20º</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="text-light">
                                             <th scope="row">Sexta</th>
                                             <td><i class="fa-solid fa-droplet"></i> 0%</td>
                                             <td><i class="fa-solid fa-sun"></i> <i class="fa-solid fa-moon"></i></td>
                                             <td>20º / 20º</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="text-light">
                                             <th scope="row">Sábado</th>
                                             <td><i class="fa-solid fa-droplet"></i> 0%</td>
                                             <td><i class="fa-solid fa-sun"></i> <i class="fa-solid fa-moon"></i></td>
@@ -140,28 +142,28 @@
                             </div>
                         </div>
                         <!-- Alerts Card [NO API] -->
-                        <div class="card mt-4" id="alert-card">
+                        <div class="card mt-4 rounded-5" id="alert-card">
                             <div class="card-body">
-                                <p class="d-flex justify-content-center mb-0">Sem previsão de chuva para hoje.</p>
+                                <p class="d-flex justify-content-center mb-0 text-light">Sem previsão de chuva para hoje.</p>
                             </div>
                         </div>
                         <!-- General Info Card -->
                         <div class="row mt-4">
                             <div class="col-6">
-                                <div class="card" id="humidity-card">
+                                <div class="card rounded-5" id="humidity-card">
                                     <div class="container">
                                         <i class="fa-solid fa-water d-flex justify-content-center mt-2 mb-2"></i>
-                                        <p class="d-flex justify-content-center mb-0">Umidade</p>
-                                        <p class="d-flex justify-content-center" id="humidity">0%</p>
+                                        <p class="d-flex justify-content-center mb-0 text-light">Umidade</p>
+                                        <p class="d-flex justify-content-center text-light" id="humidity">0%</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6 mb-4">
-                                <div class="card" id="wind-speed-card">
+                                <div class="card rounded-5" id="wind-speed-card">
                                     <div class="container">
                                         <i class="fa-solid fa-wind d-flex justify-content-center mt-2 mb-2"></i>
-                                        <p class="d-flex justify-content-center mb-0">Ventos</p>
-                                        <p class="d-flex justify-content-center" id="wind-speed">0 km/h</p>
+                                        <p class="d-flex justify-content-center mb-0 text-light">Ventos</p>
+                                        <p class="d-flex justify-content-center text-light" id="wind-speed">0 km/h</p>
                                     </div>
                                 </div>
                             </div>
