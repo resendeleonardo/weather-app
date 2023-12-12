@@ -29,43 +29,42 @@
 <body class="min-vh-100">
 
     <header>
-        <!-- Offcanvas Menu -->
-        <div class="pt-5 px-4">
-            <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M1.5 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM1.5 7.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM1.5 12.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
-                </svg>
-            </button>
-
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu"
-                aria-labelledby="offcanvasMenuLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title text-white" id="offcanvasMenuLabel"><i class="fas fa-cloud-sun-rain"></i> WeatherApp
-                    </h5>
-                    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div class="row">
-                        <div class="col-md">
-                            <div class="input-group mb-0 search-box">
-                                <input type="text" class="form-control" placeholder="Buscar cidade..." id="search-input"
-                                    aria-label="Search" aria-describedby="search-button" maxlength="25">
-                                <button class="btn btn-secondary" type="button" id="search-button"
-                                    data-bs-dismiss="offcanvas" disabled><i class="fas fa-search"></i></button>
-                                <button class="btn btn-secondary" id="clear-input" type="button"><i
-                                        class="fas fa-times"></i></button>
+        <div class="container">
+            <!-- Offcanvas Menu -->
+            <div class="pt-5 px-3 px-sm-0">
+                <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M1.5 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM1.5 7.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM1.5 12.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </button>
+    
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu"
+                    aria-labelledby="offcanvasMenuLabel">
+                    <div class="offcanvas-header p-4">
+                        <h5 class="offcanvas-title text-white fs-2" id="offcanvasMenuLabel"><i
+                                class="fas fa-cloud-sun-rain"></i> WeatherApp
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="input-group mb-0 p-2 border rounded-5">
+                                    <input type="text" class="form-control fs-4 bg-transparent border-0 text-white" placeholder="Search city..."
+                                        id="search-input" aria-label="Search" aria-describedby="search-button"
+                                        maxlength="25">
+                                    <button class="btn text-white bg-transparent border-0" type="button" id="search-button"
+                                        data-bs-dismiss="offcanvas" disabled><i class="fas fa-search fs-3"></i></button>
+                                    <button class="btn text-white bg-transparent border-0" id="clear-input" type="button"
+                                        style="display: none;"><i class="fas fa-times fs-3"></i></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Added locations -->
-
-                </div>
-                <div class="offcanvas-footer">
-                    <div class="container mb-2">
-                        <a href="https://openweathermap.org/" class="text-white text-decoration-none">OpenWeather</a>
+                        <!-- Added locations -->
+    
                     </div>
                 </div>
             </div>
@@ -78,8 +77,8 @@
             <div class="main-content d-flex align-items-center justify-content-center">
 
                 <!-- Weather App Card -->
-                <div class="card weather-card">
-                    <div class="container weather-content" id="weather-content">
+                <div class="card weather-card w-100">
+                    <div class="container weather-content p-4" id="weather-content">
                         <div class="row mb-4">
                             <div class="col">
                                 <div class="d-flex justify-content-between" id="temperature-div">

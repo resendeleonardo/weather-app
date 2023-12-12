@@ -16,10 +16,15 @@ body {
   /* height: 100vh; */
   font-family: "Inter", sans-serif;
   font-size: 1.4rem;
-  /* margin: 3rem 5%; */
+
+  --bg-dark: rgb(40, 40, 40);
 
   /* Clear Skyes [Day] - DEFAULT */
   background: linear-gradient(135deg, #6285f3, #9db8e8, #809fff);
+}
+
+.bg-custom-dark {
+  background-color: var(--bg-dark);
 }
 
 /* Header */
@@ -28,78 +33,50 @@ body {
   background: transparent;
   border: none;
 }
+.btn-menu:hover {
+  color: #fff;
+}
 .btn-menu:focus-visible {
   border-color: transparent;
   outline: none;
   box-shadow: none;
 }
 .offcanvas {
-  background-color: rgb(40 40 40);
-}
-li a {
-  color: #fff;
+  background-color: var(--bg-dark);
 }
 
-.search-box {
-  border: 1px solid #fff;
-  border-radius: 20px;
-}
 /* Remove hover effect and change border color */
 .form-control:focus {
-  border-color: #575656;
+  background: transparent;
+  border: none;
   box-shadow: none;
 }
-#search-input {
-  border: none;
-  border-radius: 20px;
-  padding-right: 40px;
-  color: #fff;
-  background: transparent;
-}
-#search-input::placeholder {
-  color: #fff;
-}
-#search-button {
-  border-radius: 20px;
-  color: #fff;
-  background-color: transparent;
-  border: none;
-  opacity: 1;
-}
-#clear-input {
-  border-radius: 20px;
-  color: #fff;
-  background-color: transparent;
-  border: none;
-  display: none;
+.search-input::placeholder {
+  color: #a0a0a0;
 }
 
 /* Weather Card / Content  */
 .weather-card {
   background-color: transparent;
   border-color: transparent;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-}
-.weather-content {
-  padding: 40px;
+  /* box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175); */
 }
 #temperature-div p {
-  font-size: 60px;
+  font-size: 6rem;
 }
 #temperature-div i {
-  font-size: 60px;
-  margin-top: 20px;
-  margin-right: 10px;
+  font-size: 6em;
+  margin-top: 2em;
+  margin-right: 1em;
   color: gray;
 }
 /* Week Card */
 .week-card {
-  border-radius: 10px;
   border-color: rgb(219, 217, 217);
   background-color: rgb(219, 217, 217);
 }
 .week-content {
-  padding: 10px;
+  padding: 1em;
 }
 /* Humidity, Wind Speed, Alerts ... */
 #humidity-card,
@@ -122,29 +99,10 @@ li a {
 }
 #humidity-card,
 #wind-speed-card {
-  padding: 10px;
+  padding: 1em;
 }
 #humidity-card i,
 #wind-speed-card i {
-  font-size: 35px;
+  font-size: 3.5rem;
   color: #fff;
-}
-
-/* Mobile Screens */
-@media (max-width: 767.98px) {
-  body {
-    transform: none !important;
-    transition: none !important;
-  }
-
-  /* Weather Card / Content  */
-  .weather-card {
-    width: 100%;
-    background-color: transparent;
-    border-color: transparent;
-    box-shadow: none;
-  }
-  #weather-content {
-    padding: 10px;
-  }
 }
