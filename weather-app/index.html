@@ -40,7 +40,7 @@
                     </svg>
                 </button>
     
-                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu"
+                <div class="offcanvas offcanvas-start bg-custom-dark" tabindex="-1" id="offcanvasMenu"
                     aria-labelledby="offcanvasMenuLabel">
                     <div class="offcanvas-header p-4">
                         <h5 class="offcanvas-title text-white fs-2" id="offcanvasMenuLabel"><i
@@ -76,30 +76,31 @@
         <div class="container-fluid">
             <div class="main-content d-flex align-items-center justify-content-center">
 
-                <!-- Weather App Card -->
-                <div class="card weather-card w-100">
+                <!-- Weather App Container -->
+                <div class="weather-container w-100 bg-transparent">
                     <div class="container weather-content p-4" id="weather-content">
-                        <div class="row mb-4">
-                            <div class="col">
-                                <div class="d-flex justify-content-between" id="temperature-div">
-                                    <p class="mb-0 text-light" id="temp">26º</b></p>
-                                    <span id="weather-icon"></span>
-                                </div>
-                                <h4 class="mb-4 text-light" id="weather-description">Chuva</h4>
-                                <div>
-                                    <p class="mb-0 text-light" id="location">Brasília, Brasil</p>
-                                    <div class="row">
-                                        <p class="text-light">
-                                            <span id="temp-max">26º</span> / <span id="temp-min">19º</span> Sensação
-                                            térmica de <span id="feels-like">25º</span>
-                                        </p>
-                                    </div>
+                        <div class="d-flex flex-column mb-4">
+                            <div class="d-flex flex-row align-items-center justify-content-between">
+                                <p class="mb-0 text-light temp">
+                                    <span id="temp">26º</span>
+                                    </b>
+                                </p>
+                                <span class="weather-icon" id="weather-icon"></span>
+                            </div>
+                            <h4 class="mb-4 text-light" id="weather-description">Chuva</h4>
+                            <div>
+                                <p class="mb-0 text-light" id="location">Brasília, Brasil</p>
+                                <div class="row">
+                                    <p class="text-light">
+                                        <span id="temp-max">26º</span> / <span id="temp-min">19º</span> Sensação
+                                        térmica de <span id="feels-like">25º</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Weekly Weather Card [NO API] -->
+                        <!-- Weekly Weather Card -->
                         <div class="card week-card rounded-5" id="week-card">
-                            <div class="container week-content">
+                            <div class="container week-content p-4">
                                 <table class="table table-borderless">
                                     <thead>
                                         <tr class="text-light">
@@ -140,7 +141,7 @@
                                 </table>
                             </div>
                         </div>
-                        <!-- Alerts Card [NO API] -->
+                        <!-- Alerts Card -->
                         <div class="card mt-4 rounded-5" id="alert-card">
                             <div class="card-body">
                                 <p class="d-flex justify-content-center mb-0 text-light">Sem previsão de chuva para hoje.</p>
@@ -150,19 +151,23 @@
                         <div class="row mt-4">
                             <div class="col-6">
                                 <div class="card rounded-5" id="humidity-card">
-                                    <div class="container">
-                                        <i class="fa-solid fa-water d-flex justify-content-center mt-2 mb-2"></i>
-                                        <p class="d-flex justify-content-center mb-0 text-light">Umidade</p>
-                                        <p class="d-flex justify-content-center text-light" id="humidity">0%</p>
+                                    <div class="container p-4">
+                                        <div class="d-flex flex-column align-items-center justify-content-center">
+                                            <i class="fa-solid fa-water mt-2 mb-2 text-light fs-1"></i>
+                                            <p class="mb-0 text-light">Umidade</p>
+                                            <p class="text-light" id="humidity">0%</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6 mb-4">
                                 <div class="card rounded-5" id="wind-speed-card">
-                                    <div class="container">
-                                        <i class="fa-solid fa-wind d-flex justify-content-center mt-2 mb-2"></i>
-                                        <p class="d-flex justify-content-center mb-0 text-light">Ventos</p>
-                                        <p class="d-flex justify-content-center text-light" id="wind-speed">0 km/h</p>
+                                    <div class="container p-4">
+                                        <div class="d-flex flex-column align-items-center justify-content-center">
+                                            <i class="fa-solid fa-wind mt-2 mb-2 text-light fs-1"></i>
+                                            <p class="mb-0 text-light">Ventos</p>
+                                            <p class="text-light" id="wind-speed">0 km/h</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

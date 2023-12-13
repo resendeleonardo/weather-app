@@ -10,21 +10,15 @@
 :root {
   font-size: 62.5%;
 
+  --bg-dark: rgb(40, 40, 40);
 }
 
 body {
-  /* height: 100vh; */
   font-family: "Inter", sans-serif;
   font-size: 1.4rem;
 
-  --bg-dark: rgb(40, 40, 40);
-
   /* Clear Skyes [Day] - DEFAULT */
   background: linear-gradient(135deg, #6285f3, #9db8e8, #809fff);
-}
-
-.bg-custom-dark {
-  background-color: var(--bg-dark);
 }
 
 /* Header */
@@ -41,11 +35,11 @@ body {
   outline: none;
   box-shadow: none;
 }
-.offcanvas {
+/* Offcanvas */
+.bg-custom-dark {
   background-color: var(--bg-dark);
 }
 
-/* Remove hover effect and change border color */
 .form-control:focus {
   background: transparent;
   border: none;
@@ -55,28 +49,15 @@ body {
   color: #a0a0a0;
 }
 
-/* Weather Card / Content  */
-.weather-card {
-  background-color: transparent;
-  border-color: transparent;
-  /* box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175); */
-}
-#temperature-div p {
+/* Weather Content  */
+.temp,
+.weather-icon {
   font-size: 6rem;
-}
-#temperature-div i {
-  font-size: 6em;
-  margin-top: 2em;
-  margin-right: 1em;
-  color: gray;
 }
 /* Week Card */
 .week-card {
   border-color: rgb(219, 217, 217);
   background-color: rgb(219, 217, 217);
-}
-.week-content {
-  padding: 1em;
 }
 /* Humidity, Wind Speed, Alerts ... */
 #humidity-card,
@@ -95,14 +76,4 @@ body {
   /* background-color: #6e7999; */
 
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-  /* border-radius: 20px; */
-}
-#humidity-card,
-#wind-speed-card {
-  padding: 1em;
-}
-#humidity-card i,
-#wind-speed-card i {
-  font-size: 3.5rem;
-  color: #fff;
 }
