@@ -11,6 +11,7 @@
   font-size: 62.5%;
 
   --bg-dark: rgb(40, 40, 40);
+  --bg-default-card-color: rgb(87, 124, 238);
 }
 
 body {
@@ -21,59 +22,22 @@ body {
   background: linear-gradient(135deg, #6285f3, #9db8e8, #809fff);
 }
 
+
+/* CUSTOM STYLES */
 /* Header */
-.btn-menu {
-  color: #fff;
-  background: transparent;
-  border: none;
-}
-.btn-menu:hover {
-  color: #fff;
-}
-.btn-menu:focus-visible {
-  border-color: transparent;
-  outline: none;
-  box-shadow: none;
-}
-/* Offcanvas */
 .bg-custom-dark {
   background-color: var(--bg-dark);
 }
 
-.form-control:focus {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-.search-input::placeholder {
-  color: #a0a0a0;
-}
-
-/* Weather Content  */
+/* Weather Container  */
 .temp,
 .weather-icon {
   font-size: 6rem;
 }
-/* Week Card */
-.week-card {
-  border-color: rgb(219, 217, 217);
-  background-color: rgb(219, 217, 217);
-}
-/* Humidity, Wind Speed, Alerts ... */
-#humidity-card,
-#wind-speed-card,
-#alert-card,
-.week-card {
-  /* Clear Skyes [Day] - DEFAULT */
-  border-color: transparent;
-  background-color: #577cee;
-  /* border-color: #577cee; */
-
-  /* Clear Skyes [Night] */
-  /* background-color: #665b99; */
-
-  /* Rainy Skyes [D&N] */
-  /* background-color: #6e7999; */
-
+.bg-default-card {
+  background-color: var(--bg-default-card-color);
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+.icon-size-lg {
+  font-size: 3rem;
 }
