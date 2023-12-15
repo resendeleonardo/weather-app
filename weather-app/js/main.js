@@ -1,77 +1,120 @@
-// main.js
+// './js/main.js'
 
-// OpenWeather API
-const apiKey = '<API-KEY>'; // ADD YOUR API KEY HERE!
-const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
+const apiKey = "<API-KEY>"; // ADD YOUR API KEY HERE!
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
 
-// Function to fetch weather data from the OpenWeather API
-async function getWeatherData(cityName) {
-    try {
-        const response = await fetch(apiUrl + `${cityName}&units=metric&appid=${apiKey}&lang=pt_br`);
-        const data = await response.json();
+// Fetching Data from OpenWeather API
+const getWeatherData = async (cityName) => {
+  try {
+    const response = await fetch(
+      apiUrl + `${cityName}&units=metric&appid=${apiKey}&lang=pt_br`
+    );
+    const data = await response.json();
 
-        // console.log(data);
+    setWeatherData(data);
+  } catch (error) {
+    console.error("Error fetching weather data:", error);
+  }
+};
 
-        // Update temperature
-        document.getElementById('temp').textContent = `${Math.round(data.main.temp)}º`;
+// Updating UI with data from OpenWeather API
+const setWeatherData = (data) => {
+  const weatherCondition = data.weather[0].main;
+  const iconElement = document.getElementById("weather-icon");
+  const cards = ["week-card", "alert-card", "humidity-card", "wind-speed-card"];
+  const weatherStyles = {
+    Clear: {
+      "01d": {
+        icon: `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather-icon" id="weather-icon" class="weather-icon"></img>`,
+        bodyBackground: "linear-gradient(135deg, #6285f3, #9db8e8, #809fff)",
+        cardBackground: "#577cee",
+      },
+      "01n": {
+        icon: '<i class="fa-solid fa-moon weather-icon" style="color: #dd9334;"></i>',
+        bodyBackground: "linear-gradient(135deg, #807da3, #544c80, #303870)",
+        cardBackground: "#665b99",
+      },
+    },
+    Rain: {
+      icon: `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather-icon" id="weather-icon" class="weather-icon"></img>`,
+      bodyBackground: "linear-gradient(315deg, #636e84, #6d7c9a, #87a1ad)",
+      cardBackground: "#6e7999",
+    },
+    Clouds: {
+      icon: `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather-icon" id="weather-icon" class="weather-icon"></img>`,
+      bodyBackground: "linear-gradient(315deg, #636e84, #6d7c9a, #87a1ad)",
+      cardBackground: "#6e7999",
+    },
+    Default: {
+      icon: `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather-icon" id="weather-icon" class="weather-icon"></img>`,
+      bodyBackground: "linear-gradient(135deg, #6285f3, #9db8e8, #809fff)",
+      cardBackground: "#577cee",
+    },
+  };
 
-        const weatherCondition = data.weather[0].main;
+  // Update Temperature -- Celsius
+  document.getElementById("temp").textContent = `${Math.round(
+    data.main.temp
+  )}º`;
 
-        // Update weather icon and bg on weather condition
-        if (weatherCondition === 'Clear' && data.weather[0].icon === '01d') {
-            document.getElementById('weather-icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather-icon" id="weather-icon" style="height: 90px;"></img>`;
-            document.body.style.background = 'linear-gradient(135deg, #6285f3, #9db8e8, #809fff)';
-            document.querySelector('.week-card').style.backgroundColor = '#577cee';
-            document.getElementById('alert-card').style.backgroundColor = '#577cee';
-            document.getElementById('humidity-card').style.backgroundColor = '#577cee';
-            document.getElementById('wind-speed-card').style.backgroundColor = '#577cee';
-        } else if (['Thunderstom', 'Drizzle', 'Rain', 'Clouds'].includes(weatherCondition)) {
-            document.getElementById('weather-icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather-icon" id="weather-icon" style="height: 90px;"></img>`;
-            document.body.style.background = 'linear-gradient(315deg, #636e84, #6d7c9a, #87a1ad)';
-            document.getElementById('week-card').style.backgroundColor = '#6e7999';
-            document.getElementById('alert-card').style.backgroundColor = '#6e7999';
-            document.getElementById('humidity-card').style.backgroundColor = '#6e7999';
-            document.getElementById('wind-speed-card').style.backgroundColor = '#6e7999';
-        } else if (weatherCondition === 'Clear' && data.weather[0].icon === '01n') {
-            document.getElementById('weather-icon').innerHTML = '<i class="fa-solid fa-moon" style="color: #dd9334; font-size: 71px;"></i>';
-            document.body.style.background = 'linear-gradient(135deg, #807da3, #544c80, #303870)';
-            document.getElementById('week-card').style.backgroundColor = '#665b99';
-            document.getElementById('alert-card').style.backgroundColor = '#665b99';
-            document.getElementById('humidity-card').style.backgroundColor = '#665b99';
-            document.getElementById('wind-speed-card').style.backgroundColor = '#665b99';
-        } else {
-            document.getElementById('weather-icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather-icon" id="weather-icon" style="height: 90px;"></img>`;
-        }
+  // Update Weather Icon and Background on Weather Condition
+  if (weatherStyles[weatherCondition]) {
+    const style =
+      weatherStyles[weatherCondition][data.weather[0].icon] ||
+      weatherStyles[weatherCondition];
+    iconElement.innerHTML = style.icon;
+    document.body.style.background = style.bodyBackground;
+    cards.forEach((card) => {
+      const cardElement = document.getElementById(card);
+      if (cardElement) {
+        cardElement.style.backgroundColor = style.cardBackground;
+      }
+    });
+  } else {
+    iconElement.innerHTML = weatherStyles["Default"]["icon"];
+    document.body.style.background = weatherStyles["Default"]["bodyBackground"];
+    cards.forEach((card) => {
+      const cardElement = document.getElementById(card);
+      if (cardElement) {
+        cardElement.style.backgroundColor =
+          weatherStyles["Default"]["cardBackground"];
+      }
+    });
+  }
 
-        // Update Weather Description
-        document.getElementById('weather-description').textContent = data.weather[0].description;
+  // Update Weather Description
+  document.getElementById("weather-description").textContent =
+    data.weather[0].description;
 
-        // Update City Name and Country Code [BR - Brazil]
-        document.getElementById('location').textContent = `${data.name}, ${data.sys.country}`;
+  // Update City Name and Country Code [Ex: BR - Brazil]
+  document.getElementById(
+    "location"
+  ).textContent = `${data.name}, ${data.sys.country}`;
 
-        // Update temp_max, temp_min and feels_like
-        document.getElementById('temp-max').textContent = `${Math.round(data.main.temp_max)}º`;
-        document.getElementById('temp-min').textContent = `${Math.round(data.main.temp_min)}º`;
-        document.getElementById('feels-like').textContent = `${Math.round(data.main.feels_like)}º`;
+  // Update temp_max, temp_min and feels_like -- Celsius
+  document.getElementById("temp-max").textContent = `${Math.round(
+    data.main.temp_max
+  )}º`;
+  document.getElementById("temp-min").textContent = `${Math.round(
+    data.main.temp_min
+  )}º`;
+  document.getElementById("feels-like").textContent = `${Math.round(
+    data.main.feels_like
+  )}º`;
 
-        // Update Humidity
-        document.getElementById('humidity').textContent = `${data.main.humidity} %`;
+  // Update Humidity -- %
+  document.getElementById("humidity").textContent = `${data.main.humidity} %`;
 
-        // Update Wind Speed
-        document.getElementById('wind-speed').textContent = `${Math.round(data.wind.speed * 3.6)} km/h`; // m/sec to km/h
-
-
-    } catch (error) {
-        console.error('Error fetching weather data:', error);
-    }
-}
-// Call the function to update weather data on html
-// getWeatherData();
+  // Update Wind Speed -- m/sec to km/h
+  document.getElementById("wind-speed").textContent = `${Math.round(
+    data.wind.speed * 3.6
+  )} km/h`;
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   const cityName = document.getElementById("search-input");
   const clearBtn = document.getElementById("clear-input");
-  const searchBtn = document.getElementById("search-button"); // Can add search on button click
+  const searchBtn = document.getElementById("search-button");
   getWeatherData("Brasília"); // Default City
   cityName.addEventListener("input", () => {
     if (cityName.value.trim() !== "") {
@@ -89,8 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   cityName.addEventListener("keydown", (event) => {
     if (event.key === "Enter" && cityName.value !== "") {
-      //   console.log('Enter key was pressed');
-      //   console.log(`City typed is: ${cityName.value}`);
       getWeatherData(cityName.value);
       document.querySelector('[data-bs-dismiss="offcanvas"]').click();
     }
