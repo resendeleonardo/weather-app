@@ -16,9 +16,9 @@ This project is a basic, yet fully responsive and interactive Weather App utiliz
 ## Screenshots
 
 <div style="display: flex;">
-  <img src="weather-app/screenshots/weather-app_sao-paulo(iPhone 12 Pro)-screen2.png" alt="Screenshot 1" width="292.5" height="633">
-  <img src="weather-app/screenshots/weather-app_sao-paulo(iPhone 12 Pro)-screen1.png" alt="Screenshot 1" width="292.5" height="633">
-  <img src="weather-app/screenshots/weather-app-index.png" alt="Screenshot 2" width="292.5" height="633">
+  <img src="weather-app/screenshots/weather-app_sao-paulo(iPhone 12 Pro)-screen2.png" alt="Screenshot 1" height="550">
+  <img src="weather-app/screenshots/weather-app_sao-paulo(iPhone 12 Pro)-screen1.png" alt="Screenshot 1" height="550">
+  <img src="weather-app/screenshots/weather-app-index.png" alt="Screenshot 2" height="550">
 </div>
 
 ## Technologies Used
