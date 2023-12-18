@@ -28,6 +28,10 @@ body {
 .bg-custom-dark {
   background-color: var(--bg-dark);
 }
+.city-item:hover {
+  cursor: pointer;
+  background-color: #505050;
+}
 
 /* Weather Container  */
 .temp,
